@@ -27,7 +27,6 @@ void Scene::renderImage(const std::string& fileName) {
     m_lightList.push_back(redLight);
 
 
-
     //std::unique_ptr<SceneObject> s(new Sphere(glm::vec3(0, 0, 10), 100));
     m_objectList.push_back(std::unique_ptr<SceneObject>(new Sphere(glm::vec3(0, 0, 10), 60)));// coordonnées du centre (0, 0, 10) et rayon (= 60) 
     m_objectList.push_back(std::unique_ptr<SceneObject>(new Sphere(glm::vec3(140, -50, 10), 50)));
