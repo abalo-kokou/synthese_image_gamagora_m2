@@ -1,0 +1,3 @@
+C:/Users/kabalo/Documents/Synthese_image/tp/synthese_image_gamagora_m2/TP4/out/build/x64-Debug (par défaut)/CMakeFiles/TP4.dir
+C:/Users/kabalo/Documents/Synthese_image/tp/synthese_image_gamagora_m2/TP4/out/build/x64-Debug (par défaut)/CMakeFiles/edit_cache.dir
+C:/Users/kabalo/Documents/Synthese_image/tp/synthese_image_gamagora_m2/TP4/out/build/x64-Debug (par défaut)/CMakeFiles/rebuild_cache.dir
