@@ -13,6 +13,7 @@
 #include "SceneObject.h"
 #include "Sphere.h"
 
+using namespace std;
 Scene::Scene(unsigned int width, unsigned int height, const Camera& camera, const sf::Color& backgroundColor) : m_width(width), m_height(height), m_camera(camera), m_backgroundColor(backgroundColor)
 {
     m_image.create(m_width, m_height, m_backgroundColor);
@@ -26,15 +27,17 @@ void Scene::renderImage(const std::string& fileName) {
 
     Light redLight(glm::vec3(400, 400, 200), glm::vec3(1000, 100, 42)); //Red light
     m_lightList.push_back(redLight);
-    
-    // Generate spheres randomly // 100 for testing
-    for (int i = 0; i < 100; i++) {
+
+    // Generate spheres randomly with boxes // 100 for testing
+    for (int i = 0; i < 40; i++) {
+        // Spheres
         float radius = glm::linearRand(10.0f, 20.0f);
         float x = glm::linearRand(-140.0f, 140.0f);
         float y = glm::linearRand(-200.0f, 200.0f);
         float z = glm::linearRand(-100.0f, 100.0f);
-
         m_objectList.push_back(std::unique_ptr<SceneObject>(new Sphere(glm::vec3(x, y, z), radius)));
+        // Boxes
+
     }
 
     // Compute pixel color
@@ -70,11 +73,15 @@ sf::Color Scene::rayTracePixel(unsigned int x, unsigned int y) {
     glm::vec3 normal;
 
     // access by reference to avoid copying
+    std::vector<Sphere> lightenSphere;
+    int i = 0;
     for(auto& object : m_objectList) {
-
+        i++;
         // If false, no intersection found
         if (object->intersect(pixel, position, normal)) {
-
+            //lightenSphere
+           // m_objectList.push_back(std::unique_ptr<SceneObject>(new Sphere(glm::vec3(x, y, z), radius)));
+            
             glm::vec3 positionLight, normalLight;
 
             for (auto& light : m_lightList) {
@@ -90,7 +97,7 @@ sf::Color Scene::rayTracePixel(unsigned int x, unsigned int y) {
                     }
                     else {
 
-                        return sf::Color::Yellow;
+                        return sf::Color::Cyan;
 
                     }
                 }
