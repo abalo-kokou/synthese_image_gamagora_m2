@@ -1,0 +1,6 @@
+ * length = (lnR.GetPosition(lnR.positionCount - 1) - lnR.GetPosition(lnR.positionCount - 2)).magnitude;
+ --- lnR.positionCount - 1 => Nbre de points (vertices) formant la ligne excepté le point de départ ( d'où le "-1").
+ --- lnR.positionCount - 2 => Nbre de points (vertices) formant la ligne excepté le point de départ et le dernier point (proche de la target) ( d'où le "-2")
+
+
+			   
