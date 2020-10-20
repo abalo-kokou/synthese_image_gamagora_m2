@@ -26,8 +26,8 @@ public class Generator : MonoBehaviour
             y = Random.Range(-10, 10);
             velocity = new Vector3(x, y, 0);
             cube.transform.position += velocity * Time.deltaTime;
-
-            //if (cube.transform.position.y < 0) cube.transform.position
+            if (cube.transform.position.y < 0) 
+            { cube.transform.position = new Vector3(0, 0, 0); }
         }
     }
 
